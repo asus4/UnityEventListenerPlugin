@@ -10,7 +10,6 @@
 
 extern "C" {
     void dispatchNativeUnityEvent(char * msg) {
-        [[NSNotificationCenter defaultCenter] postNotificationName:@"UnityEvent"
-                                                            object:[NSString stringWithUTF8String:msg]];
+        [[NSNotificationCenter defaultCenter] postNotificationName:@"UnityEvent" object:nil userInfo:@{@"name":[NSString stringWithUTF8String:msg]}];
     }
 }
